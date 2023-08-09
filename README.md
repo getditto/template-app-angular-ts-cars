@@ -1,5 +1,13 @@
 # Ditto Cars - Angular
 
+## Quickstart
+
+1. Open `src/app/ditto.service.ts`
+2. Replace `YOUR_APP_ID` and `YOUR_TOKEN`
+3. Find those values [on the portal](https://portal.ditto.live)
+4. `npm i`
+5. `npm serve`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
 ## Development server
