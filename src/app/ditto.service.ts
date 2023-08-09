@@ -39,6 +39,7 @@ export class DittoService {
 
   getItem(id: string, callback: SingleObservationHandler) {
     let collection = this.ditto.store.collection("cars")
+    this.clearItems()
     this.subscription = collection.findByID(id).subscribe()
     this.observer = collection.findByID(id).observeLocal(callback);
   }
