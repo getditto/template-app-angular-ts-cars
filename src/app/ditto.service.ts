@@ -27,7 +27,7 @@ export class DittoService {
 
   getItems(query: string, callback: QueryObservationHandler) {
     let collection = this.ditto.store.collection("cars")
-    // This will stop subscriptions and evict exiting before searching again to clear memory
+    // This will stop subscriptions and evict existing documents and attachments to clear memory
     this.clearItems()
 
     // syncronize data in the background without blocking the main thread
