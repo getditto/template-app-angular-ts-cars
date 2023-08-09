@@ -53,7 +53,7 @@ export class DittoService {
   }
 
   fetchAttachment(token: AttachmentToken) {
-    // can only fetch one attchment at a time, we probably would want to scale this
+    // This will only fetch one attchment at a time, you can scale this by creating a Map of fetchers
     let promise = new Promise<Uint8Array>((resolve, reject) => {
       this.fetcher = this.ditto.store.collection("cars").fetchAttachment(token, (attachmentFetchEvent) => {
         switch (attachmentFetchEvent.type) {
