@@ -30,13 +30,13 @@ export class ProductListComponent {
     this.dittoService.getItem(id, (document: Document | null) => {
       if (document) {
         let product = new Product(document)
-        this.fetchItem(product)
+        this.fetchItemAttachment(product)
       } else {
       }
     })
   }
 
-  fetchItem(item: Product) {
+  fetchItemAttachment(item: Product) {
     if (item.attachmentToken) {
       let promise = this.dittoService.fetchAttachment(item.attachmentToken)
       promise.then(value => {
@@ -69,10 +69,3 @@ export class ProductListComponent {
     this.getItems(this.checkoutForm.value.query|| "color == 'gray'");
   }
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
