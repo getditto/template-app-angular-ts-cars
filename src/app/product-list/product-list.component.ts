@@ -27,6 +27,7 @@ export class ProductListComponent {
     private formBuilder: FormBuilder) {}
 
   findById(id: string) {
+    this.clearItems()
     this.dittoService.getItem(id, (document: Document | null) => {
       if (document) {
         let product = new Product(document)
@@ -52,6 +53,7 @@ export class ProductListComponent {
   }
 
   getItems(query: string) {
+    this.clearItems()
     this.dittoService.getItems(query, (documents: Document[]) => {
       this.items = documents.map(doc => new Product(doc))
     })
